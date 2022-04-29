@@ -16,9 +16,13 @@ cp usr/.* ~/ 2> /dev/null;
 echo "Updateing repositories and system..."
 sudo pacman -Syyuu
 echo "Installing pacman dependencies..."
-sudo pacman -S base-devel alacritty pipewire pipewire-pulse pipewire-alsa nvim zsh picom git go btop feh xorg xorg-xinit ttf-fira-code wqy-zenhei libxft libxinerama
+sudo pacman -S base-devel alacritty pipewire pipewire-pulse pipewire-alsa 
+sudo pacman -S nvim zsh picom git go rofi
+sudo pacman -S btop feh xorg xorg-xinit ttf-fira-code 
+sudo pacman -S wqy-zenhei libxft libxinerama
+sudo pacman -Fy
 echo "Enabling pipewire service..."
-sudo systemctl enable pipwire
+systemctl enable --user pipwire
 echo "Enabling systemd-networkd service..."
 sudo systemctl enable systemd-networkd.service
 echo "Enabling systemd-resolved service..."
@@ -33,7 +37,7 @@ if ! type "yay" > /dev/null; then
 fi
 
 echo "Installing yay dependencies..."
-yay -S brave-beta glava visual-studio-code-bin starship gruvbox-material-gtk ttf-symbola nerd-fonts-complete
+yay -S brave-beta-bin glava visual-studio-code-bin starship gruvbox-material-gtk-theme-git ttf-symbola nerd-fonts-complete
 
 if [ ! -d "/usr/src/dwm" ]; then
     echo "Installing dwm..."
