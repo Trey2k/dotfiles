@@ -30,3 +30,9 @@ export LIBVIRT_SOURCE=/home/trey2k/development/libvirt
 
 export UNISON="${XDG_DATA_HOME:-$HOME/.local/share}/unison"
 export HISTFILE="${XDG_DATA_HOME:-$HOME/.local/share}/history"
+
+# Make sure the systemd-resolved symlink exists
+if [ ! -L /etc/resolv.conf ]; then
+    echo "systemd-resolved symlink does not exists. Creating now"
+    sudo ln -rsf /run/systemd/resolve/stub-resolv.conf /etc/resolv.conf
+fi
