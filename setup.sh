@@ -10,7 +10,7 @@ echo "Copying dotfiles..."
 # Else
 [ ! -d "~/.config" ] && cp -r .config ~/
 
-cp networkd/20-wired.networkd /etc/systemd/network/
+cp networkd/20-wired.network /etc/systemd/network/
 
 cp usr/.* ~/ 2> /dev/null;
 echo "Updateing repositories and system..."
