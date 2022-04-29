@@ -5,7 +5,7 @@ echo "Copying dotfiles..."
 # Else
 [ ! -d "~/.config" ] && cp -r .config ~/
 
-cp usr/.* ~/
+cp usr/.* ~/ 2> /dev/null;
 
 echo "Installing pacman dependencies..."
 sudo pacman -S base-devel alacritty nvim zsh picom git go btop feh
