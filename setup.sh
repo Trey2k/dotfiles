@@ -10,13 +10,13 @@ echo "Copying dotfiles..."
 # Else
 [ ! -d "~/.config" ] && cp -r .config ~/
 
-cp networkd/20-wired.network /etc/systemd/network/
+sudo cp networkd/20-wired.network /etc/systemd/network/
 
 cp usr/.* ~/ 2> /dev/null;
 echo "Updateing repositories and system..."
 sudo pacman -Syyuu
 echo "Installing pacman dependencies..."
-sudo pacman -S base-devel alacritty pipewire pipewire-pulse pipewire-alsa nvim zsh picom git go btop feh xorg xorg-xinit ttf-fira-code wqy-zenhei
+sudo pacman -S base-devel alacritty pipewire pipewire-pulse pipewire-alsa nvim zsh picom git go btop feh xorg xorg-xinit ttf-fira-code wqy-zenhei libxft
 echo "Enabling pipewire service..."
 sudo systemctl enable pipwire
 echo "Enabling systemd-networkd service..."
