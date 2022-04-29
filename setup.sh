@@ -1,4 +1,9 @@
 #!/bin/sh
+if [[ ! $EUID -ne 0 ]]; then
+    echo "This script must be run as a user" 
+    exit 1
+fi
+
 echo "Copying dotfiles..."
 # If .config dir already exists
 [ -d "~/.config" ] && cp -r .config/* ~/.config/
