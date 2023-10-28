@@ -7,3 +7,4 @@ This is my dotfile configs for:
 - Neovim - code editor
 - Alacritty - terminal emulator
 - zsh - shell
+- tmux - terminal multiplexer

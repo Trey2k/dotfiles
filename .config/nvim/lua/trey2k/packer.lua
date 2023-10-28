@@ -1,7 +1,7 @@
 -- This file can be loaded by calling `lua require('plugins')` from your init.vim
 
 -- Only required if you have packer configured as `opt`
-vim.cmd [[packadd packer.nvim]]
+vim.cmd("packadd packer.nvim")
 
 return require('packer').startup(function(use)
   -- Packer can manage itself
@@ -14,27 +14,29 @@ return require('packer').startup(function(use)
   }
 
    use({
-	  'rose-pine/neovim',
-	  as = 'rose-pine',
+	  'catppuccin/nvim',
+	  as = 'catppuccin',
+	  flavor = "mocha",
 	  config = function()
-		  vim.cmd('colorscheme rose-pine')
+		  vim.cmd('colorscheme catppuccin')
 	  end
   })
 
 
-  use {
-			'nvim-treesitter/nvim-treesitter',
-			run = function()
-				local ts_update = require('nvim-treesitter.install').update({ with_sync = true })
-				ts_update()
-			end,}
+  use({
+	'nvim-treesitter/nvim-treesitter',
+	run = function()
+	local ts_update = require('nvim-treesitter.install').update({ with_sync = true })
+	ts_update()
+	end
+})
 
   use("nvim-treesitter/playground")
   use("theprimeagen/harpoon")
   use("mbbill/undotree")
   use("tpope/vim-fugitive")
 
-  use {
+  use({
 	'VonHeikemen/lsp-zero.nvim',
 	branch = 'v1.x',
 	requires = {
@@ -55,8 +57,13 @@ return require('packer').startup(function(use)
 		{'L3MON4D3/LuaSnip'},
 		{'rafamadriz/friendly-snippets'},
 	}
-  }
+})
 
   use("github/copilot.vim")
+
+  use({
+	  "christoomey/vim-tmux-navigator",
+	  lazy = false
+  })
 
 end)
