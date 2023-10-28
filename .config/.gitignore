@@ -1,0 +1,12 @@
+*
+!/.gitignore
+!/hypr/
+!/hypr/**
+!/nvim/
+!/nvim/**
+!/alacritty/
+!/alacritty/**
+!/zsh/
+!/zsh/**
+!/waybar/
+!/waybar/**

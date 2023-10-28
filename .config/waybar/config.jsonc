@@ -1,0 +1,89 @@
+{
+    "layer": "top",
+    "position": "top",
+    "mod": "dock",
+    "exclusive": true,
+    "passthrough": false,
+    "gtk-layer-shell": true,
+    "height": 0,
+    "modules-left": [
+        "clock",
+        "custom/weather",
+        "hyprland/workspaces"
+    ],
+    "modules-center": ["hyprland/window"],
+    "modules-right": [
+        "tray",
+        "custom/updates",
+        "pulseaudio",
+        "pulseaudio#microphone"
+    ],
+
+    "hyprland/window": {
+        "format": "{}"
+    },
+    "hyprland/workspaces": {
+        "disable-scroll": true,
+        "all-outputs": true,
+        "on-click": "activate",
+        "persistent_workspaces": {
+            "1": [],
+            "2": [],
+            "3": [],
+            "4": [],
+            "5": [],
+            "6": [],
+            "7": [],
+            "8": [],
+            "9": [],
+            "10": []
+        }
+    },
+    "custom/updates": {
+        "format": " {}",
+        "interval": 7200,                     // every two hours
+        "exec": "i=$(checkupdates); echo \"$i\" |wc -l; echo \"$i\" |column -t |tr '\n' '\r'",       // # of updates and tooltip details
+        "exec-if": "exit 0",                  // always run; consider advanced run conditions
+        "on-click": "alacritty -e sudo pacman -Syu", // update system
+        "signal": 8
+    },
+   "custom/weather" : {
+        "tooltip" : true,
+        "format" : "{}",
+        "interval" : 30,
+        "exec" : "~/.config/waybar/scripts/weather.py",
+        "return-type" : "json"
+    },
+    "clock": {
+	"interval": 1,
+        "format": "{: %I:%M:%S %p   %m/%d/%Y}",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+    },
+    "pulseaudio": {
+        "format": "{icon} {volume}%",
+        "tooltip": false,
+        "format-muted": " Muted",
+        "on-click": "pamixer -t",
+        "on-scroll-up": "pamixer -i 5",
+        "on-scroll-down": "pamixer -d 5",
+        "scroll-step": 5,
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", "", ""]
+        }
+    },
+    "pulseaudio#microphone": {
+        "format": "{format_source}",
+        "format-source": "🎙️{volume}%",
+        "format-source-muted": "🔇 Muted",
+        "on-click": "pamixer --default-source -t",
+        "on-scroll-up": "pamixer --default-source -i 5",
+        "on-scroll-down": "pamixer --default-source -d 5",
+        "scroll-step": 5
+    }
+}
