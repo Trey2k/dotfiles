@@ -31,4 +31,8 @@ _comp_options+=(globdots)
 
 export GPG_TTY=$(tty)
 
+# Use LLVM
+export CC=clang
+export CXX=clang++
+
 eval "$(starship init zsh)"
