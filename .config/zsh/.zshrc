@@ -6,6 +6,9 @@ alias vim="nvim"
 alias vi="nvim"
 alias nano="nvim"
 
+alias spt="spt --tick-rate 16"
+alias spotify="spt"
+
 alias ls="exa --long --header --icons --sort=type"
 alias tree="exa --tree --level 3"
 alias sdn="sudo shutdown -h now"

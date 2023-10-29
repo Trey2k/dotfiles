@@ -1,6 +1,7 @@
 require('nvim-treesitter.configs').setup {
   ensure_installed = { "gitattributes", "gitignore", "gomod", "gosum", "go",
-  		"c", "cpp", "python", "bash", "lua", "vim", "vimdoc", "query" },
+  		"c", "cpp", "python", "bash", "lua", "vim", "vimdoc", "query", "json5",
+		"yaml", "html", "css", "javascript"},
 
   sync_install = false,
 
