@@ -66,4 +66,13 @@ return require('packer').startup(function(use)
 	  lazy = false
   })
 
+  use("mfussenegger/nvim-dap")
+  use({
+	  "rcarriga/nvim-dap-ui",
+	  events = "VeryLazy",
+	  requires = {
+		  "mfussenegger/nvim-dap",
+	  },
+  })
+
 end)

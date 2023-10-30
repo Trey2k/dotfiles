@@ -1,3 +1,15 @@
+local catppuccin = require("catppuccin")
+
+catppuccin.setup({
+	flavor = "mocha",
+	background = {
+		light = "mocha",
+		dark = "mocha",
+	},
+	transparent_background = true,
+})
+
+
 function ColorMyPencils(color)
 	color = color or "catppuccin"
 	vim.cmd.colorscheme(color)
@@ -7,3 +19,4 @@ function ColorMyPencils(color)
 end
 
 ColorMyPencils()
+
