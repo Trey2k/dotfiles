@@ -7,6 +7,7 @@ lsp.ensure_installed({
   'clangd',
   'pylsp',
   'lua_ls',
+  'zls',
 })
 
 lsp.nvim_workspace()

@@ -44,6 +44,7 @@ return require('packer').startup(function(use)
 		{'neovim/nvim-lspconfig'},
 		{'williamboman/mason.nvim'},
 		{'williamboman/mason-lspconfig.nvim'},
+		{'zigtools/zls'},
 
 		-- Autocompletion
 		{'hrsh7th/nvim-cmp'},

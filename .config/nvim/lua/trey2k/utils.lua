@@ -76,7 +76,7 @@ end
 -- from .vscode/launch.json
 utils.load_launch_json = function(path)
 	require('dap.ext.vscode').load_launchjs(path, {
-		codelldb = {'cpp', 'c', 'h'}
+		codelldb = {'cpp', 'c', 'h', 'hpp', 'zig'}
 	})
 end
 
